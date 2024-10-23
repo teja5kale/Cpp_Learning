@@ -1,48 +1,38 @@
-github-download
-===============
+# Typecasting in C++ - Exploring Different Types
 
-`github-download` downloads commit comments and select issues metadata, saving the raw JSON and writing summary `.csv` files.
+# Problem Statement
 
-Installing
-----------
+# Title:
+Exploring Typecasting in C++
 
-Download the `.jar` file [here](/target/github-download-1.0-SNAPSHOT-jar-with-dependencies.jar). It includes all dependencies. You must have the [Java Runtime Environment](http://java.com/en/download/manual.jsp) version 7 or above.
+# Description:
+This exercise evaluates the functionality and potential issues of typecasting in C++. You will work with implicit and explicit typecasting (including `static_cast`, `dynamic_cast`, `reinterpret_cast`, and `const_cast`) to explore their usage with primitive types and user-defined classes. The program highlights safe conversions as well as risky conversions that can lead to undefined behavior.
 
-Usage
------
+# Objectives:
+1. Demonstrate implicit and explicit typecasting with primitive types (e.g., converting `int` to `double` and vice versa).
+2. Perform upcasting and downcasting between base and derived classes.
+3. Explore the use of `reinterpret_cast` and demonstrate the associated risks.
+4. Use `const_cast` to remove constness from variables, and explain why this can be dangerous.
 
-`github-download` can be run from the command line. It has three required flags:
+# Solution Hint
+1. Primitive Typecasting:
+   - Use implicit typecasting when the compiler automatically converts one type to another (e.g., `int` to `double`).
+   - Use `static_cast` for explicit conversions between compatible types (e.g., `double` to `int`).
 
-`-repo`. The full repository name, e.g., `PovertyAction/github-download`.
+2. Class Typecasting:
+   - Upcasting (from `Derived` to `Base`) is done implicitly, but downcasting requires the use of `dynamic_cast` to ensure safety.
+   - Demonstrate dynamic casting and check if the casting was successful.
 
-`-to`. The directory in which to save the metadata. It will be created if it does not exist already.
+3. Risky Typecasting:
+   - `reinterpret_cast` is used to treat a pointer as if it points to another type (e.g., casting an `int*` to `char*`). This can be unsafe and lead to undefined behavior.
 
-`-token`. The name of a text file that contains solely a GitHub [OAuth token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/). GitHub will supply you a token, which is a single string. You must copy it to a text file, then specify the name of that file to `-token`.
+4. Const Typecasting:
+   - `const_cast` allows removing the const qualifier, but modifying a const variable can cause unexpected results or undefined behavior.
 
-All together:
+# Learning
 
-```
-java -jar github-download.jar -repo PovertyAction/github-download -token token.txt -to metadata
-```
-
-If the name of the `.jar` file is not `github-download.jar`, use the actual filename in the command above, or rename the file as `github-download.jar`. If the file is not in the current working directory, you will have to specify its path.
-
-Next, specify the metadata to download:
-
-`-issues`. Download select issues metadata.
-
-`-cc`. Download commit comments, including in-line notes.
-
-To download all supported metadata:
-
-```
-java -jar github-download.jar -repo PovertyAction/github-download -token token.txt -to metadata -issues -cc
-```
-
-You may see the following warning message, which is safe to ignore:
-
-```
-SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-```
+By solving this problem, you will:
+- Understand the differences between implicit and explicit typecasting.
+- Learn how to safely cast between base and derived classes using `dynamic_cast`.
+- Explore the dangers of `reinterpret_cast` and why it should be used sparingly.
+- Understand how `const_cast` can be used to remove const qualifiers, but also why it can be dangerous to modify const data.
