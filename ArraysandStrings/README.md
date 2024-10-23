@@ -1,48 +1,14 @@
-github-download
-===============
+1. Problem Statement
+Title: Arrays and Strings Operations with Classes
 
-`github-download` downloads commit comments and select issues metadata, saving the raw JSON and writing summary `.csv` files.
+Description:
+Create a C++ program that accepts multiple strings from the user, stores them in a class, and performs various operations such as sorting the strings, concatenating them, and displaying the results. The class should handle user input, processing, and display, and should be defined in a header and source file. The main function will use this class to interact with the user.
 
-Installing
-----------
+Requirements:
 
-Download the `.jar` file [here](/target/github-download-1.0-SNAPSHOT-jar-with-dependencies.jar). It includes all dependencies. You must have the [Java Runtime Environment](http://java.com/en/download/manual.jsp) version 7 or above.
-
-Usage
------
-
-`github-download` can be run from the command line. It has three required flags:
-
-`-repo`. The full repository name, e.g., `PovertyAction/github-download`.
-
-`-to`. The directory in which to save the metadata. It will be created if it does not exist already.
-
-`-token`. The name of a text file that contains solely a GitHub [OAuth token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/). GitHub will supply you a token, which is a single string. You must copy it to a text file, then specify the name of that file to `-token`.
-
-All together:
-
-```
-java -jar github-download.jar -repo PovertyAction/github-download -token token.txt -to metadata
-```
-
-If the name of the `.jar` file is not `github-download.jar`, use the actual filename in the command above, or rename the file as `github-download.jar`. If the file is not in the current working directory, you will have to specify its path.
-
-Next, specify the metadata to download:
-
-`-issues`. Download select issues metadata.
-
-`-cc`. Download commit comments, including in-line notes.
-
-To download all supported metadata:
-
-```
-java -jar github-download.jar -repo PovertyAction/github-download -token token.txt -to metadata -issues -cc
-```
-
-You may see the following warning message, which is safe to ignore:
-
-```
-SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-```
+The program should accept strings from the user until they enter a sentinel value ('q').
+Store the strings in a class.
+Use arrays and strings to perform operations such as:
+Sorting the strings.
+Concatenating all strings.
+Display the original strings and the results of the operations.
