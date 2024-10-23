@@ -1,48 +1,28 @@
-github-download
-===============
+# Smart Pointers in C++
 
-`github-download` downloads commit comments and select issues metadata, saving the raw JSON and writing summary `.csv` files.
+# Problem Statement
 
-Installing
-----------
+# Title:
+Smart Pointers in C++
 
-Download the `.jar` file [here](/target/github-download-1.0-SNAPSHOT-jar-with-dependencies.jar). It includes all dependencies. You must have the [Java Runtime Environment](http://java.com/en/download/manual.jsp) version 7 or above.
+# Description:
+The task is to implement a class `SmartPointerDemo` to demonstrate the functionality of smart pointers in C++. You will:
+1. Use `std::unique_ptr` to manage a dynamically allocated integer.
+2. Use `std::shared_ptr` to manage a collection of integers.
+3. Implement methods to display the value managed by `unique_ptr` and the values in the `shared_ptr` collection.
+4. Include functionality to demonstrate the ownership and lifetime management provided by smart pointers.
 
-Usage
------
+# Objectives:
+- Understand how smart pointers manage dynamic memory.
+- Learn the differences between `unique_ptr` and `shared_ptr`.
+- Gain practical experience in using smart pointers in C++.
 
-`github-download` can be run from the command line. It has three required flags:
+# Solution Hint:
+- Use `std::make_unique` for `unique_ptr` initialization.
+- Use `std::make_shared` for `shared_ptr` initialization.
 
-`-repo`. The full repository name, e.g., `PovertyAction/github-download`.
-
-`-to`. The directory in which to save the metadata. It will be created if it does not exist already.
-
-`-token`. The name of a text file that contains solely a GitHub [OAuth token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/). GitHub will supply you a token, which is a single string. You must copy it to a text file, then specify the name of that file to `-token`.
-
-All together:
-
-```
-java -jar github-download.jar -repo PovertyAction/github-download -token token.txt -to metadata
-```
-
-If the name of the `.jar` file is not `github-download.jar`, use the actual filename in the command above, or rename the file as `github-download.jar`. If the file is not in the current working directory, you will have to specify its path.
-
-Next, specify the metadata to download:
-
-`-issues`. Download select issues metadata.
-
-`-cc`. Download commit comments, including in-line notes.
-
-To download all supported metadata:
-
-```
-java -jar github-download.jar -repo PovertyAction/github-download -token token.txt -to metadata -issues -cc
-```
-
-You may see the following warning message, which is safe to ignore:
-
-```
-SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-```
+# Learning:
+By solving this problem, you will:
+- Gain insights into memory management with smart pointers in C++.
+- Learn how to prevent memory leaks and dangling pointers.
+- Understand ownership semantics provided by smart pointers.
