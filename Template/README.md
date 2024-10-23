@@ -1,48 +1,27 @@
-github-download
-===============
+# Template Function for Sorting
 
-`github-download` downloads commit comments and select issues metadata, saving the raw JSON and writing summary `.csv` files.
+# Problem Statement
 
-Installing
-----------
+# Title:
+Template Function for Sorting
 
-Download the `.jar` file [here](/target/github-download-1.0-SNAPSHOT-jar-with-dependencies.jar). It includes all dependencies. You must have the [Java Runtime Environment](http://java.com/en/download/manual.jsp) version 7 or above.
+# Description:
+The task is to implement a class `TemplateSort` that demonstrates the use of C++ templates. You will:
+1. Create a template method to sort an array of any data type (e.g., integers, doubles, strings).
+2. Prompt the user for the number of elements and the elements themselves.
+3. Display the sorted array.
 
-Usage
------
+# Objectives:
+- Understand how to use templates for generic programming in C++.
+- Learn about the flexibility of templates for different data types.
+- Gain practical experience in implementing sorting algorithms using templates.
 
-`github-download` can be run from the command line. It has three required flags:
+# Solution Hint:
+- Use `std::sort` for sorting.
+- Use a vector to dynamically store elements.
 
-`-repo`. The full repository name, e.g., `PovertyAction/github-download`.
-
-`-to`. The directory in which to save the metadata. It will be created if it does not exist already.
-
-`-token`. The name of a text file that contains solely a GitHub [OAuth token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/). GitHub will supply you a token, which is a single string. You must copy it to a text file, then specify the name of that file to `-token`.
-
-All together:
-
-```
-java -jar github-download.jar -repo PovertyAction/github-download -token token.txt -to metadata
-```
-
-If the name of the `.jar` file is not `github-download.jar`, use the actual filename in the command above, or rename the file as `github-download.jar`. If the file is not in the current working directory, you will have to specify its path.
-
-Next, specify the metadata to download:
-
-`-issues`. Download select issues metadata.
-
-`-cc`. Download commit comments, including in-line notes.
-
-To download all supported metadata:
-
-```
-java -jar github-download.jar -repo PovertyAction/github-download -token token.txt -to metadata -issues -cc
-```
-
-You may see the following warning message, which is safe to ignore:
-
-```
-SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-```
+# Learning:
+By solving this problem, you will:
+- Gain insights into template programming in C++.
+- Understand how to write functions and classes that work with any data type.
+- Learn about the advantages of generic programming.
