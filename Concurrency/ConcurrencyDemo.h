@@ -6,16 +6,13 @@
 
 class ConcurrencyDemo {
 public:
-    // Constructor
     ConcurrencyDemo(int numThreads);
 
-    // Method to start threads
     void startThreads();
 
 private:
-    int numThreads; // Number of threads
-    std::mutex mtx; // Mutex for synchronization
+    int numThreads; 
+    std::mutex mtx; 
 
-    // Method for the thread to execute
     void threadFunction(int threadID);
 };
