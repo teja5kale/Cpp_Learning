@@ -1,48 +1,35 @@
-github-download
-===============
+# Pointers and References in C++ - Advanced Usage
 
-`github-download` downloads commit comments and select issues metadata, saving the raw JSON and writing summary `.csv` files.
+# Problem Statement
 
-Installing
-----------
+# Title:
+Exploring Advanced Usage of Pointers and References in C++
 
-Download the `.jar` file [here](/target/github-download-1.0-SNAPSHOT-jar-with-dependencies.jar). It includes all dependencies. You must have the [Java Runtime Environment](http://java.com/en/download/manual.jsp) version 7 or above.
+# Description:
+In this problem, you are tasked with exploring advanced usage of pointers and references in C++. The program demonstrates pointer-to-pointer, reference-to-pointer, and performs operations such as swapping integers and dynamically allocating memory for arrays using pointers. This exercise will test your understanding of memory manipulation, dynamic memory allocation, and error handling in C++.
 
-Usage
------
+# Objectives:
+1. Swap two integers using both pointers and references, handling invalid inputs.
+2. Dynamically allocate memory for an integer array, and perform operations like sum, product, and finding min/max using pointers.
+3. Demonstrate the use of a pointer to a pointer.
+4. Demonstrate the use of a reference to a pointer.
 
-`github-download` can be run from the command line. It has three required flags:
+# Solution Hint
+1. Pointers:
+   - Handle invalid inputs such as `nullptr` when passing pointers to functions.
+   - Use pointer arithmetic to perform operations on dynamically allocated arrays.
 
-`-repo`. The full repository name, e.g., `PovertyAction/github-download`.
+2. References:
+   - Ensure that references modify variables directly without requiring explicit dereferencing.
+   - Use references to manipulate pointers and demonstrate pointer reassignment.
 
-`-to`. The directory in which to save the metadata. It will be created if it does not exist already.
+3. Dynamic Memory:
+   - Use `new` to allocate memory for an array and perform operations using pointer arithmetic.
+   - Properly free memory using `delete[]` to avoid memory leaks.
 
-`-token`. The name of a text file that contains solely a GitHub [OAuth token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/). GitHub will supply you a token, which is a single string. You must copy it to a text file, then specify the name of that file to `-token`.
-
-All together:
-
-```
-java -jar github-download.jar -repo PovertyAction/github-download -token token.txt -to metadata
-```
-
-If the name of the `.jar` file is not `github-download.jar`, use the actual filename in the command above, or rename the file as `github-download.jar`. If the file is not in the current working directory, you will have to specify its path.
-
-Next, specify the metadata to download:
-
-`-issues`. Download select issues metadata.
-
-`-cc`. Download commit comments, including in-line notes.
-
-To download all supported metadata:
-
-```
-java -jar github-download.jar -repo PovertyAction/github-download -token token.txt -to metadata -issues -cc
-```
-
-You may see the following warning message, which is safe to ignore:
-
-```
-SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-```
+# Learning
+By solving this problem, you will:
+- Gain hands-on experience with pointers and references in C++.
+- Learn how to handle errors and invalid inputs when dealing with pointers.
+- Understand pointer arithmetic and dynamic memory allocation in depth.
+- Explore the concept of pointers to pointers and references to pointers.
