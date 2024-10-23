@@ -5,10 +5,9 @@ int main() {
     int numerator, denominator;
 
     try {
-        // Get user input
+
         exDemo.getInput(numerator, denominator);
 
-        // Perform division
         double result = exDemo.performDivision(numerator, denominator);
         std::cout << "Result of division: " << result << std::endl;
     }
