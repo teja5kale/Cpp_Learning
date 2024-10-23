@@ -12,7 +12,7 @@ int main() {
         std::cout << "3. Exit\n";
         std::cout << "> ";
         std::cin >> choice;
-        std::cin.ignore(); // Clear newline character from buffer
+        std::cin.ignore(); 
 
         switch (choice) {
         case '1':

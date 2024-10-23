@@ -2,48 +2,44 @@
 
 #include <iostream>
 #include <string>
-#include <algorithm> // for sort()
-
+#include <algorithm> 
 using namespace std;
 
-// Function to collect user input for strings
+
 void ArrayString::getStrings() {
     std::cout << "Enter strings (type 'q' to quit): " << std::endl;
     while (true) {
         std::cout << "> ";
         std::string input;
-        std::getline(std::cin, input); // Using getline to allow spaces
+        std::getline(std::cin, input); 
 
-        // Check if user wants to quit
+        
         if (input == "q" || input == "Q") {
             break;
         }
 
-        strings.push_back(input); // Store the string
+        strings.push_back(input); 
     }
 }
 
-// Function to sort the strings in ascending order
 void ArrayString::sortStrings() {
-    std::sort(strings.begin(), strings.end()); // Sort strings
+    std::sort(strings.begin(), strings.end()); 
 }
 
-// Function to display the original strings and concatenated result
 void ArrayString::displayStrings() {
     std::cout << "\nOriginal Strings:" << std::endl;
     for (const auto& str : strings) {
-        std::cout << str << std::endl; // Display each string
+        std::cout << str << std::endl;
     }
 
-    std::string concatenated = concatenateStrings(); // Get concatenated string
-    std::cout << "\nConcatenated String: " << concatenated << std::endl; // Display concatenated string
+    std::string concatenated = concatenateStrings();
+    std::cout << "\nConcatenated String: " << concatenated << std::endl;
 }
 
-// Helper function to concatenate all strings
 std::string ArrayString::concatenateStrings() {
     std::string result;
     for (const auto& str : strings) {
-        result += str + " "; // Add space between concatenated strings
+        result += str + " "; 
     }
-    return result; // Return concatenated result
+    return result;
 }
