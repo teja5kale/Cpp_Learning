@@ -2,13 +2,12 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <algorithm> // for reverse()
+#include <algorithm> 
 
 using namespace std;
 
-// Function to collect user input
 void IOLoop::getInput() {
-    clearData(); // Reset the data
+    clearData(); 
     std::cout << "Enter integers (type 'q' to quit): " << std::endl;
 
     while (true) {
@@ -16,15 +15,13 @@ void IOLoop::getInput() {
         std::string input;
         std::cin >> input;
 
-        // Check if user wants to quit
         if (input == "q" || input == "Q") {
             break;
         }
 
-        // Validate and store input
         try {
-            int number = std::stoi(input); // Convert string to integer
-            numbers.push_back(number); // Store the number
+            int number = std::stoi(input); 
+            numbers.push_back(number); 
         }
         catch (const std::invalid_argument&) {
             std::cout << "Invalid input. Please enter a valid integer." << std::endl;
@@ -32,7 +29,6 @@ void IOLoop::getInput() {
     }
 }
 
-// Function to perform calculations on the input numbers
 void IOLoop::calculateStatistics() {
     sum = 0;
     positiveCount = 0;
@@ -53,7 +49,6 @@ void IOLoop::calculateStatistics() {
     }
 }
 
-// Function to display the results of the calculations
 void IOLoop::displayResults() {
     std::cout << "\nResults:" << std::endl;
     std::cout << "Sum of numbers: " << sum << std::endl;
@@ -67,10 +62,9 @@ void IOLoop::displayResults() {
     }
     std::cout << std::endl;
 
-    reverseNumbers(); // Display the reversed numbers
+    reverseNumbers(); 
 }
 
-// Helper function to reset data
 void IOLoop::clearData() {
     numbers.clear();
     sum = 0;
@@ -79,7 +73,6 @@ void IOLoop::clearData() {
     zeroCount = 0;
 }
 
-// Helper function to display numbers in reverse order
 void IOLoop::reverseNumbers() {
     std::cout << "\nReversed numbers: ";
     for (auto it = numbers.rbegin(); it != numbers.rend(); ++it) {
