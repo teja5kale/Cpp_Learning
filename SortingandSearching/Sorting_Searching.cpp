@@ -1,12 +1,11 @@
 #include "Sorting_Searching.h"
 #include <iostream>
-#include <algorithm> // for sort()
-#include <stdexcept> // for std::invalid_argument
+#include <algorithm> 
+#include <stdexcept> 
 #include <string>
 
 using namespace std;
 
-// Function to collect user input for integers
 void SortingSearching::getInput() {
     cout << "Enter integers (type 'q' to quit): " << endl;
     while (true) {
@@ -14,15 +13,13 @@ void SortingSearching::getInput() {
         string input;
         cin >> input;
 
-        // Check if user wants to quit
         if (input == "q" || input == "Q") {
             break;
         }
 
-        // Validate input
         try {
-            int number = std::stoi(input); // Convert to integer
-            numbers.push_back(number); // Store the integer
+            int number = std::stoi(input); 
+            numbers.push_back(number); 
         }
         catch (const std::invalid_argument&) {
             cout << "Invalid input. Please enter an integer." << endl;
@@ -30,13 +27,11 @@ void SortingSearching::getInput() {
     }
 }
 
-// Function to sort the array
 void SortingSearching::sortArray() {
-    sortedNumbers = numbers; // Copy original numbers to sortedNumbers
-    sort(sortedNumbers.begin(), sortedNumbers.end()); // Sort the array
+    sortedNumbers = numbers; 
+    sort(sortedNumbers.begin(), sortedNumbers.end()); 
 }
 
-// Function to perform linear search
 void SortingSearching::linearSearch(int key) {
     bool found = false;
     for (size_t i = 0; i < numbers.size(); ++i) {
@@ -51,7 +46,6 @@ void SortingSearching::linearSearch(int key) {
     }
 }
 
-// Function to perform binary search
 void SortingSearching::binarySearch(int key) {
     int left = 0;
     int right = sortedNumbers.size() - 1;
@@ -76,7 +70,6 @@ void SortingSearching::binarySearch(int key) {
     }
 }
 
-// Function to display original and sorted arrays
 void SortingSearching::displayArrays() {
     cout << "\nOriginal Numbers:" << endl;
     for (const auto& num : numbers) {
