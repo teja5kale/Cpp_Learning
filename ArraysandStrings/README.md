@@ -1,4 +1,4 @@
-1. Problem Statement
+Problem Statement
 Title: Arrays and Strings Operations with Classes
 
 Description:
