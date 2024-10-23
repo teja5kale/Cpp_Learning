@@ -1,4 +1,4 @@
-1. Problem Statement
+Problem Statement
 Title: Concurrency in C++
 
 Create a class ConcurrencyDemo that demonstrates the use of threads in C++. The class should:
